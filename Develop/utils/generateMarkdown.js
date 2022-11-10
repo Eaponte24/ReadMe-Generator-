@@ -1,40 +1,37 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {};
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {};
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {};
-
 // TODO: Create a function to generate markdown for README
 class Markdown {
+  static renderLicenseBadge(license) {
+    const badges = {
+      isc: "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)",
+      gnuplv3:
+        "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)",
+      mit: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+    };
 
-static renderLicenseBadge(license){
-  const badges = {
-    isc: "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)",
-    gnuplv3: "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)",
-    mit: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+    return badges[license];
   }
 
-  return badges[license]
-}
+  static renderLicenseLink(license) {
+    const links = {
+      isc: "[ISC](https://choosealicense.com/licenses/isc/)",
+      gnuplv3: "[GPL v3](https://choosealicense.com/licenses/gpl-3.0/)",
+      mit: "[MIT](https://choosealicense.com/licenses/mit/)",
+    };
 
-static renderLicenseLink(license){
-  const links = {
-    isc: "[ISC](https://choosealicense.com/licenses/isc/)",
-    gnuplv3: "[GPL v3](https://choosealicense.com/licenses/gpl-3.0/)",
-    mit: "[MIT](https://choosealicense.com/licenses/mit/)"
+    return links[license];
   }
 
-  return links[license]
-}
+  static renderLicenseSection(license) {
+    if (license) {
+      return `This is licensed under the ${this.renderLicenseLink(
+        license
+      )} license.`;
+    } else {
+      return "";
+    }
+  }
 
-static generateMarkdown(answers) {
-  
+  static generateMarkdown(answers) {
     return `
   
 # ${answers.title}
@@ -70,7 +67,9 @@ ${answers.username}
 ${answers.email}
 
 ## License
-${this.renderLicenselink(answers.license)}
-`}};
+${this.renderLicenseSection(answers.license)}
+`;
+  }
+}
 
 module.exports = Markdown;

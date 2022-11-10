@@ -1,6 +1,8 @@
 
   
-# rick
+# rase
+
+undefined
 
 ## Table of Contents 
 
@@ -11,25 +13,24 @@
 - [License](#license)
 
 ## Description
-rick
+srsa
 
 ## Installation
-rick
+ras
 
 ## Usage
-rilk
-
-## Badges
+r
 
 ## How to Contribute
-rick
+rar
 
 ## Tests
-rick
+rsara
 
 ## Questions
-rick
-rick
+asr
+
+asra
 
 ## License
-MIT
+This is licensed under the undefined license.
