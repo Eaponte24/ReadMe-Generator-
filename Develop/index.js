@@ -9,6 +9,11 @@ const questions = [
   .prompt([
     {
         type: 'input',
+        message: 'What will the title of your Readme be?',
+        name: 'title',
+      },
+    {
+        type: 'input',
         message: 'What is your GitHub username?',
         name: 'username',
       },
@@ -25,7 +30,7 @@ const questions = [
     {
       type: 'input',
       message: 'What are the steps required to install your application?',
-      name: 'installation',
+      name: 'install',
     },
     {
       type: 'input',
@@ -43,15 +48,16 @@ const questions = [
         name: 'tests',
       },
       {
-        type: 'input',
+        type: 'list',
         message: 'What License will you be using?',
+        choices: ['Apache', 'GNU', 'MIT'],
         name: 'license',
       }
   ])
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, answers) {}
 
 // TODO: Create a function to initialize app
 function init() {}
