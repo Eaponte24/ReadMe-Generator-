@@ -1,13 +1,13 @@
 // TODO: Create a function to generate markdown for README
 class Markdown {
+  
   static renderLicenseBadge(license) {
     const badges = {
       isc: "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)",
-      gnuplv3:
-        "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)",
+      gnuplv3: "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)",
       mit: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
     };
-
+    console.log(license);
     return badges[license];
   }
 
@@ -33,7 +33,6 @@ class Markdown {
 
   static generateMarkdown(answers) {
     return `
-  
 # ${answers.title}
 
 ${this.renderLicenseBadge(answers.license)}

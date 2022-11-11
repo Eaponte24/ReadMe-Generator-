@@ -17,7 +17,7 @@ const questions = [
   },
   {
     type: "input",
-    message: "What is your email?",
+    message: "What is your Email?",
     name: "email",
   },
   {
@@ -49,17 +49,18 @@ const questions = [
   {
     type: "list",
     message: "What License will you be using?",
-    choices: ["ISC", "GNUPLv3", "MIT"],
+    choices: ["isc", "gnuplv3", "mit"],
     name: "license",
   },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile() {
-  return inquirer.prompt(questions).then((answers) => {
+  return inquirer.prompt(questions)
+  .then((answers) => {
     const mark = markDown.generateMarkdown(answers);
     fs.writeFile("README.md", mark, function (err) {
-      err ? console.error(err) : console.log("Saved!");
+      err ? console.error(err) : console.log("ReadMe Saved!");
     });
   });
 }
