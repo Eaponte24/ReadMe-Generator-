@@ -12,12 +12,12 @@ const questions = [
   },
   {
     type: "input",
-    message: "What is your GitHub username?",
+    message: "What is your GitHub profile link?",
     name: "username",
   },
   {
     type: "input",
-    message: "What is your Email?",
+    message: "What is your Email address?",
     name: "email",
   },
   {
@@ -58,8 +58,8 @@ const questions = [
 function writeToFile() {
   return inquirer.prompt(questions)
   .then((answers) => {
-    const mark = markDown.generateMarkdown(answers);
-    fs.writeFile("README.md", mark, function (err) {
+    const md = markDown.generateMarkdown(answers);
+    fs.writeFile("README.md", md, function (err) {
       err ? console.error(err) : console.log("ReadMe Saved!");
     });
   });

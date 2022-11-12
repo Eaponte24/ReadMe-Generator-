@@ -61,9 +61,7 @@ ${answers.contributing}
 ${answers.tests}
 
 ## Questions
-${answers.username}
-
-${answers.email}
+If you have any questions feel free to either contact me on my Github at ${answers.username} or you can also email me at ${answers.email}.
 
 ## License
 ${this.renderLicenseSection(answers.license)}
